@@ -256,7 +256,10 @@ def eight(input):
 	# Take a look at the documentation for Strings, List and range.
 
 def nine(inputString, char):
-	return -1
+
+	for i in inputString:
+
+		return -1
 
 	# <QUESTION 10>
 
@@ -276,15 +279,19 @@ def nine(inputString, char):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def ten(string, int, char):
+	
 
 	int1 = int
+	string1 = string
+	stringlength = len(string)
+	charlower = char.casefold()
 
-	if string < 0:
+	if stringlength < 0:
 		return False
 	else:
-		if int1 < len(string):
-			if string[int1] == char:
-				return True
-			else: return False
-		else: return False
-	return False
+		if int1 < stringlength and string1.lower()[int1-1] == charlower:
+			print("String present")
+			return True
+		else:
+			print("string not present in specified place")
+			return False
