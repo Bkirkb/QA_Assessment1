@@ -231,10 +231,9 @@ def eight(input):
 	newlist = []
 	result = 1
 
-	for i in range(0,input):
+	for i in range(0,input+1):
 		newlist.append([i])
-		for i in newlist:
-			result = result * i
+		result *= i
 	return result
 
 	# <QUESTION 9>
@@ -258,7 +257,7 @@ def eight(input):
 def nine(inputString, char):
 
 	for i in inputString:
-
+		
 		return -1
 
 	# <QUESTION 10>
@@ -290,8 +289,6 @@ def ten(string, int, char):
 		return False
 	else:
 		if int1 < stringlength and string1.lower()[int1-1] == charlower:
-			print("String present")
 			return True
 		else:
-			print("string not present in specified place")
 			return False
