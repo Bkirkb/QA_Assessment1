@@ -231,9 +231,12 @@ def eight(input):
 	newlist = []
 	result = 1
 
-	for i in range(0,input+1):
-		newlist.append([i])
-		result *= i
+	if input <= 1:
+		return result
+	else:
+		for i in range(1,input+1):
+			newlist.append([i])
+			result *= i
 	return result
 
 	# <QUESTION 9>
