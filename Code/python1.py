@@ -35,6 +35,9 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
+
+	stringmax = max(input1,input2)
+	print(stringmax)
 	return ""
 
 
@@ -42,13 +45,13 @@ def one(input1, input2):
 
 	# <QUESTION 2>
 
-    # Return the string that is between the first and last appearance of "bert" in the given string
+	# Return the string that is between the first and last appearance of "bert" in the given string
 	
 	# Return the empty string "" if there is not 2 occurances of "bert" 
 	
 	# IGNORE CASE
-    
-    # <EXAMPLES>
+	
+	# <EXAMPLES>
 
 	# two("bertclivebert") → "clive"
 	# two("xxbertfridgebertyy") → "fridge"
@@ -63,6 +66,7 @@ def one(input1, input2):
 	# Use your CLI to access the Python documentation and get help manipulating strings - help(str).
 
 def two(input):
+	
 	return ""
 
 
@@ -70,13 +74,13 @@ def two(input):
 
 	# <QUESTION 3>
 
-    # given a number
+	# given a number
 	# if this number is divisible by 3 return "fizz"
 	# if this number is divisible by 5 return "buzz"
 	# if this number is divisible by both 3 and 5 return "fizzbuzz"
 	# if this number is not divisible by 3 or 5 return "null"
-	    
-    # <EXAMPLES>
+		
+	# <EXAMPLES>
 
 	# three(3) → "fizz"
 	# three(10) → "buzz"
@@ -88,12 +92,20 @@ def two(input):
 	# No Hints for this question
 
 def three(arg1):
-	return "null"
+	
+	if arg1 % 3 == 0 and arg1 % 5 == 0:
+		return "fizzbuzz"
+	elif arg1 % 3 == 0:
+		return "fizz"
+	elif arg1 % 5 == 0:
+		return "buzz"
+	else:
+		return "null"
 
 
 	# <QUESTION 4>
 
-    # Given a string seperate the string into the individual numbers present, then add each digit of each number to get a final value for each number
+	# Given a string seperate the string into the individual numbers present, then add each digit of each number to get a final value for each number
 
 	# String example = "55 72 86"
 	
@@ -103,7 +115,7 @@ def three(arg1):
 	
 	# You then need to return the highest value, in the example above this would be 14.
 	 
-    # <EXAMPLES>
+	# <EXAMPLES>
 
 	# four("55 72 86") → 14
 	# four("15 72 80 164") → 11
@@ -118,23 +130,23 @@ def four(arg1):
 
 	# <QUESTION 5>
 
-    # Given a large string that represents a csv, the structure of each record will be as follows:
-    
-    # owner,nameOfFile,encrypted?,fileSize
-    
-    # "Bert,helloWorld.py,True,1447,Bert,strings.py,False,1318,Jeff,dice.py,False,1445"
-    
-    # For each record, if it is not encrypted, return the names of the owners of the files in a String Array.
-    # Do not include duplicate names.
+	# Given a large string that represents a csv, the structure of each record will be as follows:
+	
+	# owner,nameOfFile,encrypted?,fileSize
+	
+	# "Bert,helloWorld.py,True,1447,Bert,strings.py,False,1318,Jeff,dice.py,False,1445"
+	
+	# For each record, if it is not encrypted, return the names of the owners of the files in a String Array.
+	# Do not include duplicate names.
 	# If all records are encrypted, return an empty Array.
-    
-    # <EXAMPLES>
-    
-    # five("Jeff,random.py,False,1445") → ["Jeff"]
+	
+	# <EXAMPLES>
+	
+	# five("Jeff,random.py,False,1445") → ["Jeff"]
 	# five("Bert,numberGen.py,True,1447,Bert,integers.py,True,1318,Jeff,floats.py,False,1445") → ["Jeff"]
 	# five("Bert,boolean.py,False,1447,Bert,conditions.py,False,1318,Jeff,loops.py,False,1445") → ["Bert","Jeff"]
-    # five("Bert,prime.py,True,1447,Bert,ISBN.py,False,1318,Jeff,OOP.py,False,1445") → ["Bert","Jeff"]
-    
+	# five("Bert,prime.py,True,1447,Bert,ISBN.py,False,1318,Jeff,OOP.py,False,1445") → ["Bert","Jeff"]
+	
 	# <HINT>
 
 	# Dont't forget, False is a String, not a Boolean value in the Tests above.
@@ -146,16 +158,16 @@ def five(input):
 
 	# <QUESTION 6>
 
-    # There is a well known mnemonic which goes "I before E, except after C", which is used to determine which order "ei" or "ie" should be in a word.
-    
-    # Write a function which returns the boolean True if a string follows the mnemonic, and returns the boolean False if not.
+	# There is a well known mnemonic which goes "I before E, except after C", which is used to determine which order "ei" or "ie" should be in a word.
+	
+	# Write a function which returns the boolean True if a string follows the mnemonic, and returns the boolean False if not.
 
 	# <EXAMPLES>
 
-    # six("ceiling") → True
-    # six("believe") → True
-    # six("glacier") → False
-    # six("height") → False
+	# six("ceiling") → True
+	# six("believe") → True
+	# six("glacier") → False
+	# six("height") → False
 
 	# <HINT>
 
@@ -163,24 +175,41 @@ def five(input):
 
 
 def six(input):
-    return False
+
+	return False
 
 	# <QUESTION 7>
 
-    # Write a function which returns the integer number of vowels in a given string. 
-    # You should ignore case.
+	# Write a function which returns the integer number of vowels in a given string. 
+	# You should ignore case.
 
 	# <EXAMPLES>
 
-    # seven("Hello") → 2
-    # seven("hEelLoooO") → 6
+	# seven("Hello") → 2
+	# seven("hEelLoooO") → 6
 
 	# <HINTS>
 
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def seven(input):
-    return 0
+
+	input1 = input
+	input2 = input1.casefold()
+	vowels = ["a","e","i","o","u"]
+	a = vowels[0]
+	e = vowels[1]
+	i = vowels[2]
+	o = vowels[3]
+	u = vowels[4]
+	count = 0
+
+	for j in input2:
+		if j == a or j == e or j == i or j == o or j == u:
+			count += 1
+		else:
+			count = count
+	return count
 
 	# <QUESTION 8>
 
@@ -198,17 +227,25 @@ def seven(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def eight(input):
-	return 1
+
+	newlist = []
+	result = 1
+
+	for i in range(0,input):
+		newlist.append([i])
+		for i in newlist:
+			result = result * i
+	return result
 
 	# <QUESTION 9>
 
-    # Given a string and a char, returns the position in the String where the char first appears.
-    # Ensure the positions are numbered correctly, please refer to the examples for guidance.
-    # DO NOT ignore case
-    # IGNORE whitespace
-    # If the char does not occur, return the number -1.
-    
-    # <EXAMPLES>
+	# Given a string and a char, returns the position in the String where the char first appears.
+	# Ensure the positions are numbered correctly, please refer to the examples for guidance.
+	# DO NOT ignore case
+	# IGNORE whitespace
+	# If the char does not occur, return the number -1.
+	
+	# <EXAMPLES>
 
 	# nine("This is a Sentence","s") → 4
 	# nine("This is a Sentence","S") → 8
@@ -223,12 +260,12 @@ def nine(inputString, char):
 
 	# <QUESTION 10>
 
-    # Given a string, int and a char, return a boolean value if the 'nth' 
-    # (represented by the int provided) char of the String supplied is the same as the char supplied.
-    # The int provided will NOT always be less than than the length of the String.
-    # IGNORE case and Whitespace. 
-    
-    # <EXAMPLES>
+	# Given a string, int and a char, return a boolean value if the 'nth' 
+	# (represented by the int provided) char of the String supplied is the same as the char supplied.
+	# The int provided will NOT always be less than than the length of the String.
+	# IGNORE case and Whitespace. 
+	
+	# <EXAMPLES>
 
 	# ten("The",2,'h') → True
 	# ten("AAbb",1,'b') → False
@@ -239,4 +276,15 @@ def nine(inputString, char):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def ten(string, int, char):
+
+	int1 = int
+
+	if string < 0:
+		return False
+	else:
+		if int1 < len(string):
+			if string[int1] == char:
+				return True
+			else: return False
+		else: return False
 	return False
